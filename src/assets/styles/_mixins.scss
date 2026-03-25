@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ─── Interactive ──────────────────────────────────────────────────────────────
+@mixin focus-ring {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@mixin responsive($bp) {
+  @if $bp == 'sm' {
+    @media (max-width: 640px)  { @content; }
+  } @else if $bp == 'md' {
+    @media (max-width: 768px)  { @content; }
+  } @else if $bp == 'lg' {
+    @media (max-width: 1024px) { @content; }
+  } @else if $bp == 'xl' {
+    @media (max-width: 1280px) { @content; }
+  }
+}
+
+// ─── Scrollbar ────────────────────────────────────────────────────────────────
+@mixin custom-scrollbar($size: 6px) {
+  scrollbar-width: thin;
+  scrollbar-color: $color-border-dark transparent;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-border-dark;
+    border-radius: $radius-full;
+
+    &:hover {
+      background: $color-text-muted;
+    }
+  }
+}
+
+// ─── Card ─────────────────────────────────────────────────────────────────────
+@mixin card {
+  background: $color-bg-primary;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+}
