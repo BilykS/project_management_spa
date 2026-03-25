@@ -31,6 +31,14 @@
       "status": "on-hold",
       "taskCount": 3,
       "createdAt": "2026-02-14T14:00:00.000Z"
+    },
+    {
+      "name": "Test Project",
+      "description": "Description",
+      "status": "active",
+      "taskCount": 0,
+      "createdAt": "2026-03-25T19:17:26.691Z",
+      "id": 5
     }
   ],
   "tasks": [
