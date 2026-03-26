@@ -59,9 +59,10 @@
       <input
         id="task-due"
         v-model="form.dueDate"
-        class="field__input"
+        class="field__input field__input--date"
         type="date"
         :min="today"
+        @click="($event.target as HTMLInputElement).showPicker?.()"
         @blur="validateDueDate"
       />
       <span v-if="errors.dueDate" class="field__error">{{ errors.dueDate }}</span>
@@ -226,6 +227,7 @@ async function onSubmit(): Promise<void> {
     }
 
     &--select { cursor: pointer; appearance: auto; }
+    &--date   { cursor: pointer; }
   }
 
   &--error &__input {
