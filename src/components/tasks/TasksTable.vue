@@ -83,7 +83,6 @@
             <td class="table__td">{{ task.dueDate ? formatDate(task.dueDate) : '—' }}</td>
             <td class="table__td table__td--actions">
               <button class="btn-icon" title="Редагувати" @click.stop="openEdit(task)"><Pencil :size="14" /></button>
-              <button class="btn-icon btn-icon--danger" title="Видалити" @click.stop="onDelete(task)"><Trash2 :size="14" /></button>
             </td>
           </tr>
         </VueDraggable>
@@ -105,7 +104,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
-import { GripVertical, Pencil, Trash2, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-vue-next'
+import { GripVertical, Pencil, ChevronUp, ChevronDown, ChevronsUpDown } from 'lucide-vue-next'
 import { VueDraggable } from 'vue-draggable-plus'
 import { useTasksStore } from '@/stores/tasks.store'
 import { useUiStore } from '@/stores/ui.store'
@@ -185,11 +184,6 @@ function openCreate(): void {
 function openEdit(task: Task): void {
   editingTask.value = task
   showModal.value   = true
-}
-
-async function onDelete(task: Task): Promise<void> {
-  if (!confirm(`Видалити "${task.title}"?`)) return
-  await tasksStore.remove(task.id)
 }
 
 function formatDate(iso: string): string {
