@@ -21,7 +21,7 @@
       "name": "Mobile App v2.0",
       "description": "Major update to the iOS/Android app. New UI, push notifications, offline mode.",
       "status": "completed",
-      "taskCount": 5,
+      "taskCount": 8,
       "createdAt": "2025-11-05T08:00:00.000Z"
     },
     {
@@ -39,6 +39,22 @@
       "taskCount": 1,
       "createdAt": "2026-03-25T19:17:26.691Z",
       "id": 5
+    },
+    {
+      "name": "test project2",
+      "description": "",
+      "status": "active",
+      "taskCount": 0,
+      "createdAt": "2026-03-26T10:42:30.140Z",
+      "id": 6
+    },
+    {
+      "name": "123",
+      "description": "asd",
+      "status": "active",
+      "taskCount": 0,
+      "createdAt": "2026-03-26T10:57:15.322Z",
+      "id": 7
     }
   ],
   "tasks": [
@@ -129,7 +145,7 @@
       "assignee": "Carol Williams",
       "status": "done",
       "dueDate": "2025-12-01",
-      "order": 1,
+      "order": 2,
       "createdAt": "2025-11-06T09:00:00.000Z"
     },
     {
@@ -137,7 +153,7 @@
       "projectId": 3,
       "title": "Implement push notifications",
       "assignee": "David Brown",
-      "status": "todo",
+      "status": "in-progress",
       "dueDate": "2025-12-20",
       "order": 1,
       "createdAt": "2025-11-10T10:00:00.000Z"
@@ -147,9 +163,9 @@
       "projectId": 3,
       "title": "Offline mode with local cache",
       "assignee": "Eva Martinez",
-      "status": "in-progress",
+      "status": "done",
       "dueDate": "2026-01-10",
-      "order": 2,
+      "order": 1,
       "createdAt": "2025-11-15T11:00:00.000Z"
     },
     {
@@ -159,7 +175,7 @@
       "assignee": "Bob Smith",
       "status": "done",
       "dueDate": "2026-01-25",
-      "order": 2,
+      "order": 3,
       "createdAt": "2025-11-20T09:00:00.000Z"
     },
     {
@@ -188,7 +204,7 @@
       "assignee": "Alice Johnson",
       "status": "in-progress",
       "dueDate": "2026-03-26",
-      "order": 1,
+      "order": 2,
       "createdAt": "2026-03-25T21:31:18.470Z",
       "id": 15
     },
@@ -211,6 +227,36 @@
       "order": 1,
       "createdAt": "2026-03-26T09:01:46.090Z",
       "id": 17
+    },
+    {
+      "projectId": 3,
+      "title": "123",
+      "assignee": null,
+      "status": "todo",
+      "dueDate": "2026-03-26",
+      "order": 1,
+      "createdAt": "2026-03-26T10:51:19.659Z",
+      "id": 18
+    },
+    {
+      "projectId": 3,
+      "title": "sfasdsd",
+      "assignee": "Alice Johnson",
+      "status": "todo",
+      "dueDate": "2026-03-26",
+      "order": 2,
+      "createdAt": "2026-03-26T10:53:37.213Z",
+      "id": 19
+    },
+    {
+      "projectId": 3,
+      "title": "adasd",
+      "assignee": "Bob Smith",
+      "status": "todo",
+      "dueDate": "2026-03-27",
+      "order": 8,
+      "createdAt": "2026-03-26T10:56:53.944Z",
+      "id": 20
     }
   ]
 }

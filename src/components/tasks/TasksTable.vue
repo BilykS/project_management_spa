@@ -130,9 +130,9 @@ const editingTask = ref<Task | null>(null)
 
 const columns = [
   { key: 'drag',     label: '',                   sortable: false },
-  { key: 'id',       label: 'ID',                 sortable: true  },
-  { key: 'title',    label: 'Назва завдання',     sortable: true  },
-  { key: 'assignee', label: 'Виконавець',         sortable: true  },
+  { key: 'id',       label: 'ID',                 sortable: false },
+  { key: 'title',    label: 'Назва завдання',     sortable: false },
+  { key: 'assignee', label: 'Виконавець',         sortable: false },
   { key: 'status',   label: 'Статус',             sortable: true  },
   { key: 'dueDate',  label: 'Термін виконання',   sortable: true  },
   { key: 'actions',  label: '',                   sortable: false },
@@ -318,7 +318,7 @@ onMounted(() => {
 
     &--drag    { cursor: grab; width: 40px; text-align: center; }
     &--title   { font-weight: $font-weight-medium; }
-    &--actions { @include flex-start; gap: $spacing-1; }
+    &--actions { @include flex-end; gap: $spacing-1; }
   }
 }
 
