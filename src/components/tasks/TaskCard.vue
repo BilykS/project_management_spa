@@ -6,7 +6,7 @@
     </div>
     <div class="task-card__footer">
       <span v-if="task.assignee" class="task-card__assignee">{{ task.assignee }}</span>
-      <AppBadge :status="task.status" />
+      <AppBadge :status="task.status" class="task-card__footer-bage"/>
     </div>
     <p v-if="task.dueDate" class="task-card__due">{{ formatDate(task.dueDate) }}</p>
   </div>
@@ -72,6 +72,10 @@ function formatDate(iso: string): string {
     gap: $spacing-2;
   }
 
+  &__footer-bage {
+    margin-left: auto;
+  }
+
   &__assignee {
     font-size: $font-size-xs;
     color: $color-text-secondary;
@@ -85,5 +89,7 @@ function formatDate(iso: string): string {
     color: $color-text-muted;
     margin-top: $spacing-2;
   }
+
+  
 }
 </style>
