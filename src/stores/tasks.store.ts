@@ -68,7 +68,7 @@ export const useTasksStore = defineStore(
       tasks.value.push(data)
 
       const projectsStore = useProjectsStore()
-      projectsStore.adjustTaskCount(dto.projectId, +1)
+      await projectsStore.adjustTaskCount(dto.projectId, +1)
 
       return data
     }
@@ -93,7 +93,7 @@ export const useTasksStore = defineStore(
       tasks.value = tasks.value.filter((t) => t.id !== id)
 
       const projectsStore = useProjectsStore()
-      projectsStore.adjustTaskCount(task.projectId, -1)
+      await projectsStore.adjustTaskCount(task.projectId, -1)
     }
 
     // Receives reordered array, recalculates order and patches only changed tasks

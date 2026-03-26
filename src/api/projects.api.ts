@@ -24,6 +24,10 @@ export const projectsApi = {
     return apiClient.put<Project>(`${BASE}/${id}`, dto)
   },
 
+  patch(id: number, dto: Partial<Project>): Promise<{ data: Project }> {
+    return apiClient.patch<Project>(`${BASE}/${id}`, dto)
+  },
+
   remove(id: number): Promise<void> {
     return apiClient.delete(`${BASE}/${id}`)
   },

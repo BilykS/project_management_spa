@@ -69,11 +69,12 @@ export const useProjectsStore = defineStore(
     }
 
     // Called by tasks store to keep taskCount in sync
-    function adjustTaskCount(projectId: number, delta: number): void {
+    async function adjustTaskCount(projectId: number, delta: number): Promise<void> {
       const project = projects.value.find((p) => p.id === projectId)
-      if (project) {
-        project.taskCount = Math.max(0, project.taskCount + delta)
-      }
+      if (!project) return
+      const newCount = Math.max(0, project.taskCount + delta)
+      project.taskCount = newCount
+      await projectsApi.patch(projectId, { taskCount: newCount })
     }
 
     return {

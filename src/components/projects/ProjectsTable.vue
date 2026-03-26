@@ -155,11 +155,8 @@ function formatDate(iso: string): string {
   })
 }
 
-// fetch only if store is empty (persist may already have data)
 onMounted(() => {
-  if (projectsStore.projects.length === 0) {
-    projectsStore.fetchAll()
-  }
+  projectsStore.fetchAll()
 })
 </script>
 
